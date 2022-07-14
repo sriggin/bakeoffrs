@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ivt;
+
+service TrafficScanner {
+
+  rpc IsTrafficValid(TrafficScanRequest) returns (TrafficScanResponse) {}
+}
+
+message TrafficScanRequest {
+  string ip = 1;
+  string userAgent = 2;
+}
+
+message TrafficScanResponse {
+  bool isValid = 1;
+}
